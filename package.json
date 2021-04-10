@@ -1,0 +1,19 @@
+{
+  "name": "@sebbo2002/release-bot",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sebastian Pekarek <chetengohgheihaidabo@e.sebbo.net>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "semantic-release": "^17.4.2",
+    "simple-git": "^2.37.0"
+  }
+}
