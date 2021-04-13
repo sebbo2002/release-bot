@@ -1,8 +1,8 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const git = require('simple-git')();
-const {spawn} = require('child_process');
 const semanticRelease = require('semantic-release');
+const {Buffer} = require('buffer');
 
 class ReleaseBot {
     constructor() {
@@ -122,8 +122,16 @@ class ReleaseBot {
             return;
         }
 
+        let dependencies = {};
+        try {
+            dependencies = await this.getModuleDiff(this.context.repo);
+        }
+        catch(error) {
+            core.warning('Unable to get package.json: ' + error.stack);
+        }
+
         const title = `🎉 ${release.nextRelease.version}`;
-        const body = `### ℹ️ About this release\n` +
+        let body = `### ℹ️ About this release\n` +
             `* **Version**: ${release.nextRelease.version}\n` +
             `* **Type**: ${release.nextRelease.type}\n` +
             `* **Last Release**: ${release.lastRelease.version} `+
@@ -137,6 +145,19 @@ class ReleaseBot {
                 .replace('### Features\n', '### 🆕 Features\n')
                 .replace('### BREAKING CHANGES\n', '### ⚡️ BREAKING CHANGES\n')
                 .trim();
+
+
+        [
+            ['dependencies', 'Dependencies'],
+            ['devDependencies', 'Development Dependencies'],
+            ['peerDependencies', 'Peer Dependencies'],
+            ['bundledDependencies', 'Bundled Dependencies'],
+            ['optionalDependencies', 'Optional Dependencies']
+        ].forEach(([type, name]) => {
+            if(dependencies[type]) {
+                body += `\n\n### 📦 ${name}\n` + dependencies[type].join('\n');
+            }
+        });
 
         if(pr) {
             await this.client.pulls.update({
@@ -177,14 +198,54 @@ class ReleaseBot {
         core.info('');
     }
 
-    async status() {
-        const merge = spawn('git', ['log', '-10', '--all', '--date-order'], {
-            stdio: ['inherit', 'inherit', 'inherit']
-        });
+    async getModuleDiff(context) {
+        const result = {};
+        const [newPackage, oldPackage] = await Promise.all(this.branches.map(async branch => {
+            const {data} = await this.client.repos.getContent({
+                ...context,
+                path: 'package.json',
+                ref: branch
+            });
 
-        return new Promise(resolve => {
-            merge.on('close', () => resolve());
+            return JSON.parse(Buffer.from(data.content, 'base64').toString());
+        }));
+
+        [
+            'dependencies',
+            'devDependencies',
+            'peerDependencies',
+            'bundledDependencies',
+            'optionalDependencies'
+        ].forEach(type => {
+            Object.entries(newPackage[type] || {})
+                .forEach(([dependency, newVersion]) => {
+                    const oldVersion = oldPackage[type][dependency];
+                    if(!oldVersion) {
+                        result[type] = result[type] || [];
+                        result[type].push(`* Added \`${dependency}\` \`${newVersion}\``);
+                    }
+                });
+
+            Object.entries(oldPackage[type] || {})
+                .forEach(([dependency, oldVersion]) => {
+                    const newVersion = newPackage[type][dependency];
+                    if(newVersion && newVersion !== oldVersion) {
+                        result[type] = result[type] || [];
+                        result[type].push(`* Update \`${dependency}\` from\`${oldVersion}\` to \`${newVersion}\``);
+                    }
+                });
+
+            Object.entries(oldPackage[type] || {})
+                .forEach(([dependency]) => {
+                    const newVersion = newPackage[type][dependency];
+                    if(!newVersion) {
+                        result[type] = result[type] || [];
+                        result[type].push(`* Removed \`${dependency}\``);
+                    }
+                });
         });
+        
+        return result;
     }
 }
 
