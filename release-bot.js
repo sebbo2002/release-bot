@@ -244,7 +244,7 @@ class ReleaseBot {
                     }
                 });
         });
-        
+
         return result;
     }
 }
