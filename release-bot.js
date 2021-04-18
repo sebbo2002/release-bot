@@ -43,8 +43,7 @@ class ReleaseBot {
             const latestCommit = commits.data[0].commit;
             const latestCommitDate = new Date(latestCommit.committer.date);
             if(latestCommitDate.getTime() > new Date().getTime() - this.minReleaseAge) {
-                core.info('Last commit in release branch is quite new:');
-                core.info(`${latestCommit.message} (${latestCommit.html_url.substr(latestCommit.html_url.length - 40 + 8)})`);
+                core.info('Last commit in release branch is quite new');
                 core.info('Woun\'t create a new release, bye…');
                 return;
             }
