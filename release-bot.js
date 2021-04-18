@@ -50,8 +50,6 @@ class ReleaseBot {
             }
         }
 
-        core.startGroup('Prepare fake release for semantic-release');
-
         await git.addConfig('user.email', 'chetengohgheihaidabo@e.sebbo.net');
         await git.addConfig('user.name', 'ReleaseBot');
 
@@ -78,7 +76,7 @@ class ReleaseBot {
 
         // Push fake branch to repo for semantic-release
         await git.push('origin', 'release-bot');
-        core.endGroup();
+
 
         core.startGroup('Run Semantic Release');
         const release = await semanticRelease({
