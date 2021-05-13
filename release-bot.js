@@ -85,22 +85,30 @@ class ReleaseBot {
         });
 
         await git.push(['origin', '--delete', 'release-bot']);
-
         core.endGroup();
-        core.info('');
+
+        core.startGroup('Semantic Release Output');
+        core.info(JSON.stringify(release, null, '  '));
+        core.endGroup();
 
         if(!release.nextRelease) {
+            core.info('');
             core.info('No release required, stop here…');
             return;
         }
 
-        const lastReleaseCommit = await this.client.git.getCommit({
+        core.startGroup('Get Commit of last release');
+        const lastReleaseCommit = release.lastRelease && release.lastRelease.gitHead ? await this.client.git.getCommit({
             ...this.context.repo,
             commit_sha: release.lastRelease.gitHead
-        });
+        }) : null;
+        core.info(JSON.stringify(lastReleaseCommit, null, '  '));
+        core.endGroup();
+
 
         // https://api.github.com/repos/sebbo2002/ical-generator/pulls?state=open&head=develop&base=main
         let pr = null;
+        core.startGroup('Check pull requests');
         const prs = await this.client.pulls.list({
             ...this.context.repo,
             base: this.branches[1],
@@ -110,14 +118,21 @@ class ReleaseBot {
             per_page: 1,
             page: 1
         });
+        core.info(prs.data);
+        core.info('');
+
         if(prs.data.length > 0) {
             pr = prs.data[0];
             core.info(`Found at least one pull request, will reuse #${pr.number}`);
         }
         if(pr && pr.user.login !== 'github-actions[bot]') {
+            core.endGroup();
+            core.info('');
             core.info(`Pull request #${pr.number} was not created by this bot. Ignore PR and stop here…`);
             return;
         }
+        core.endGroup();
+        core.info('');
 
         let dependencies = {};
         try {
@@ -131,9 +146,10 @@ class ReleaseBot {
         let body = `### ℹ️ About this release\n` +
             `* **Version**: ${release.nextRelease.version}\n` +
             `* **Type**: ${release.nextRelease.type}\n` +
-            `* **Last Release**: ${release.lastRelease.version} `+
-            `(${new Date(lastReleaseCommit.data.committer.date).toLocaleString()}) `+
-            `[[?](${lastReleaseCommit.data.html_url})]\n` +
+            `* **Last Release**: ` + (release.lastRelease && lastReleaseCommit ? (
+                `${release.lastRelease.version} (${new Date(lastReleaseCommit.data.committer.date).toLocaleString()}) `+
+                `[[?](${lastReleaseCommit.data.html_url})]\n`
+            ) : '-\n') +
             `* **Commits to merge**: ${diff.data.ahead_by} [[?](${diff.data.permalink_url})]` +
             '\n' + release.nextRelease.notes
                 .substr(release.nextRelease.notes.indexOf('\n'))
