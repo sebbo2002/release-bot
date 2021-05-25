@@ -118,7 +118,7 @@ class ReleaseBot {
             per_page: 1,
             page: 1
         });
-        core.info(prs.data);
+        core.info(JSON.stringify(prs.data, null, '  '));
         core.info('');
 
         if(prs.data.length > 0) {
@@ -244,7 +244,7 @@ class ReleaseBot {
                     const newVersion = newPackage[type][dependency];
                     if(newVersion && newVersion !== oldVersion) {
                         result[type] = result[type] || [];
-                        result[type].push(`* Update \`${dependency}\` from\`${oldVersion}\` to \`${newVersion}\``);
+                        result[type].push(`* Update \`${dependency}\` from \`${oldVersion}\` to \`${newVersion}\``);
                     }
                 });
 
