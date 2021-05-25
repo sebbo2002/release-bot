@@ -1,10 +1,12 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const git = require('simple-git')();
-const semanticRelease = require('semantic-release');
-const {Buffer} = require('buffer');
+import core from '@actions/core';
+import github from '@actions/github';
+import Git from 'simple-git';
+import semanticRelease from 'semantic-release';
+import {Buffer} from 'buffer';
 
-class ReleaseBot {
+const git = Git();
+
+export default class ReleaseBot {
     constructor() {
         const token = core.getInput('token');
 
@@ -261,5 +263,3 @@ class ReleaseBot {
         return result;
     }
 }
-
-module.exports = ReleaseBot;
