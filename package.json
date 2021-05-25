@@ -40,9 +40,9 @@
     "/dist"
   ],
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0",
-    "semantic-release": "^17.4.2",
-    "simple-git": "^2.37.0"
+    "@actions/core": "^1.3.0",
+    "@actions/github": "^5.0.0",
+    "semantic-release": "^17.4.3",
+    "simple-git": "^2.39.0"
   }
 }
