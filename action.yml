@@ -1,4 +1,5 @@
-name: 'ReleaseBot'
+name: 'Semantic ReleaseBot'
+author: 'Sebastian Pekarek'
 description: 'Checks development and release branches and creates a release PR when it is time for a release again.'
 inputs:
   token:
@@ -25,3 +26,6 @@ outputs:
 runs:
   using: 'node12'
   main: 'index.js'
+branding:
+  icon: git-pull-request
+  color: yellow
