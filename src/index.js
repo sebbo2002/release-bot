@@ -1,5 +1,5 @@
-const core = require('@actions/core');
-const ReleaseBot = require('./release-bot');
+import core from '@actions/core';
+import ReleaseBot from './release-bot';
 
 try {
     const bot = new ReleaseBot();

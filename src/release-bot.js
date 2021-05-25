@@ -1,10 +1,12 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const git = require('simple-git')();
-const semanticRelease = require('semantic-release');
-const {Buffer} = require('buffer');
+import core from '@actions/core';
+import github from '@actions/github';
+import Git from 'simple-git';
+import semanticRelease from 'semantic-release';
+import {Buffer} from 'buffer';
 
-class ReleaseBot {
+const git = Git();
+
+export default class ReleaseBot {
     constructor() {
         const token = core.getInput('token');
 
@@ -118,7 +120,7 @@ class ReleaseBot {
             per_page: 1,
             page: 1
         });
-        core.info(prs.data);
+        core.info(JSON.stringify(prs.data, null, '  '));
         core.info('');
 
         if(prs.data.length > 0) {
@@ -244,7 +246,7 @@ class ReleaseBot {
                     const newVersion = newPackage[type][dependency];
                     if(newVersion && newVersion !== oldVersion) {
                         result[type] = result[type] || [];
-                        result[type].push(`* Update \`${dependency}\` from\`${oldVersion}\` to \`${newVersion}\``);
+                        result[type].push(`* Update \`${dependency}\` from \`${oldVersion}\` to \`${newVersion}\``);
                     }
                 });
 
@@ -261,5 +263,3 @@ class ReleaseBot {
         return result;
     }
 }
-
-module.exports = ReleaseBot;
