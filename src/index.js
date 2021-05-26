@@ -1,5 +1,5 @@
 import core from '@actions/core';
-import ReleaseBot from './release-bot';
+import ReleaseBot from './release-bot.js';
 
 try {
     const bot = new ReleaseBot();
