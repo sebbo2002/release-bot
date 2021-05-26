@@ -1,3 +1,10 @@
+## [1.0.2-develop.3](https://github.com/sebbo2002/release-bot/compare/v1.0.2-develop.2...v1.0.2-develop.3) (2021-05-26)
+
+
+### Bug Fixes
+
+* Solve "Cannot read property 'compareCommits' of undefined" ([bf5c54f](https://github.com/sebbo2002/release-bot/commit/bf5c54f000831c3bf76609eb1f270799dab19d5d))
+
 ## [1.0.2-develop.2](https://github.com/sebbo2002/release-bot/compare/v1.0.2-develop.1...v1.0.2-develop.2) (2021-05-26)
 
 
