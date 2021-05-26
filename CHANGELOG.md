@@ -1,3 +1,10 @@
+## [1.0.2-develop.2](https://github.com/sebbo2002/release-bot/compare/v1.0.2-develop.1...v1.0.2-develop.2) (2021-05-26)
+
+
+### Bug Fixes
+
+* Allow node.js 12 as module was removed ([6c2cdc3](https://github.com/sebbo2002/release-bot/commit/6c2cdc33a4463d5dcc5e4404968c8206e72e3a9e))
+
 ## [1.0.2-develop.1](https://github.com/sebbo2002/release-bot/compare/v1.0.1...v1.0.2-develop.1) (2021-05-26)
 
 
