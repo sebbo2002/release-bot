@@ -16,6 +16,8 @@ class ReleaseBot {
             .filter(Boolean);
 
         this.client = github.getOctokit(token);
+        console.log(this.client);
+        console.log(JSON.stringify(this.client));
         this.context = github.context;
     }
 
