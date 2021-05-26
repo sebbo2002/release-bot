@@ -13,6 +13,6 @@ jobs:
       - name: ☁️ Checkout Project
         uses: actions/checkout@v2
       - name: 🤖 Run ReleaseBot
-        uses: sebbo2002/release-bot@v1
+        uses: sebbo2002/release-bot@v1.0.1-develop.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
