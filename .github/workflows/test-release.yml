@@ -16,7 +16,7 @@ jobs:
       - name: 🔧 Setup node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: ${{ matrix.node }}
       - name: 🔧 Setup npm cache
         uses: actions/cache@v2
         with:

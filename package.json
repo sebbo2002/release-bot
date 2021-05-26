@@ -11,7 +11,6 @@
     "url": "git+https://github.com/sebbo2002/release-bot.git"
   },
   "keywords": [],
-  "type": "module",
   "author": "Sebastian Pekarek <chetengohgheihaidabo@e.sebbo.net>",
   "license": "MIT",
   "bugs": {
