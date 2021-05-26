@@ -1,3 +1,11 @@
+## [1.0.2-develop.1](https://github.com/sebbo2002/release-bot/compare/v1.0.1...v1.0.2-develop.1) (2021-05-26)
+
+
+### Bug Fixes
+
+* Okay, revert the es6 modules :/ ([ecf0700](https://github.com/sebbo2002/release-bot/commit/ecf070066aff3b9bff4608df7016640f66f8104b))
+* Run linter, remove rollup, fix node version ([d6ae230](https://github.com/sebbo2002/release-bot/commit/d6ae230199cd44a8e715c2c44f0a1224d78ed4e2))
+
 ## [1.0.1](https://github.com/sebbo2002/release-bot/compare/v1.0.0...v1.0.1) (2021-05-26)
 
 
