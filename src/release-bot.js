@@ -16,15 +16,13 @@ class ReleaseBot {
             .filter(Boolean);
 
         this.client = github.getOctokit(token);
-        console.log(this.client);
-        console.log(JSON.stringify(this.client));
         this.context = github.context;
     }
 
     async run() {
 
         // https://api.github.com/repos/sebbo2002/ical-generator/compare/main...develop
-        const diff = await this.client.repos.compareCommits({
+        const diff = await this.client.rest.repos.compareCommits({
             ...this.context.repo,
             base: this.branches[1],
             head: this.branches[0]
@@ -35,7 +33,7 @@ class ReleaseBot {
         }
 
         // https://api.github.com/repos/sebbo2002/ical-generator/commits?sha=main&per_page=5&page=1
-        const commits = await this.client.repos.listCommits({
+        const commits = await this.client.rest.repos.listCommits({
             ...this.context.repo,
             sha: this.branches[1],
             per_page: 5,
@@ -100,7 +98,7 @@ class ReleaseBot {
         }
 
         core.startGroup('Get Commit of last release');
-        const lastReleaseCommit = release.lastRelease && release.lastRelease.gitHead ? await this.client.git.getCommit({
+        const lastReleaseCommit = release.lastRelease && release.lastRelease.gitHead ? await this.client.rest.git.getCommit({
             ...this.context.repo,
             commit_sha: release.lastRelease.gitHead
         }) : null;
@@ -111,7 +109,7 @@ class ReleaseBot {
         // https://api.github.com/repos/sebbo2002/ical-generator/pulls?state=open&head=develop&base=main
         let pr = null;
         core.startGroup('Check pull requests');
-        const prs = await this.client.pulls.list({
+        const prs = await this.client.rest.pulls.list({
             ...this.context.repo,
             base: this.branches[1],
             head: this.branches[0],
@@ -175,7 +173,7 @@ class ReleaseBot {
         });
 
         if(pr) {
-            await this.client.pulls.update({
+            await this.client.rest.pulls.update({
                 ...this.context.repo,
                 pull_number: pr.number,
                 title,
@@ -184,7 +182,7 @@ class ReleaseBot {
 
             core.info(`🎉 Updated Pull Request ${pr.number}:`);
         } else {
-            const c = await this.client.pulls.create({
+            const c = await this.client.rest.pulls.create({
                 ...this.context.repo,
                 base: this.branches[1],
                 head: this.branches[0],
@@ -194,7 +192,7 @@ class ReleaseBot {
             pr = c.data;
 
             if(this.assignees.length) {
-                await this.client.issues.addAssignees({
+                await this.client.rest.issues.addAssignees({
                     ...this.context.repo,
                     issue_number: pr.number,
                     assignees: this.assignees
@@ -216,7 +214,7 @@ class ReleaseBot {
     async getModuleDiff(context) {
         const result = {};
         const [newPackage, oldPackage] = await Promise.all(this.branches.map(async branch => {
-            const {data} = await this.client.repos.getContent({
+            const {data} = await this.client.rest.repos.getContent({
                 ...context,
                 path: 'package.json',
                 ref: branch
