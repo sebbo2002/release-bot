@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/sebbo2002/release-bot/compare/v1.0.0...v1.0.1) (2021-05-26)
+
+
+### Bug Fixes
+
+* Commit build index.js for later usage ([6b2cee5](https://github.com/sebbo2002/release-bot/commit/6b2cee5e5f459de8572ce8a9f8efe5b2a7adfdc2))
+* Fix action script source ([74f89f2](https://github.com/sebbo2002/release-bot/commit/74f89f2b4e4e9999997c9b787c83e7ae956ece06))
+
 ## [1.0.1-develop.2](https://github.com/sebbo2002/release-bot/compare/v1.0.1-develop.1...v1.0.1-develop.2) (2021-05-26)
 
 
