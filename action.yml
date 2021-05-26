@@ -24,8 +24,8 @@ outputs:
   pr-url:
     description: 'Link to current release pull request'
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: 'node14'
+  main: 'src/index.js'
 branding:
   icon: git-pull-request
   color: yellow
