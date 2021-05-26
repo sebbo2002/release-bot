@@ -17,6 +17,7 @@ jobs:
         with:
           repository: sebbo2002/release-bot
           path: ./.actions/release-bot
+          ref: develop
       - name: 🔧 Setup npm cache
         uses: actions/cache@v2
         with:

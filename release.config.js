@@ -30,7 +30,7 @@ module.exports = {
             'assignees': process.env.GH_OWNER
         }],
         ['@semantic-release/git', {
-            'assets': ['CHANGELOG.md', 'LICENSE'],
+            'assets': ['CHANGELOG.md', 'LICENSE', 'dist/index.js'],
             'message': 'chore(release): :bookmark: ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
         }]
     ]
