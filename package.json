@@ -36,6 +36,6 @@
     "@actions/core": "^1.4.0",
     "@actions/github": "^5.0.0",
     "semantic-release": "^17.4.3",
-    "simple-git": "^2.39.0"
+    "simple-git": "^2.39.1"
   }
 }
