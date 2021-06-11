@@ -1,21 +1,15 @@
 {
-  "name": "@sebbo2002/release-bot",
-  "version": "1.0.0-dev",
-  "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
-  "scripts": {
-    "lint": "eslint"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sebbo2002/release-bot.git"
-  },
-  "keywords": [],
   "author": "Sebastian Pekarek <chetengohgheihaidabo@e.sebbo.net>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sebbo2002/release-bot/issues"
   },
-  "homepage": "https://github.com/sebbo2002/release-bot#readme",
+  "dependencies": {
+    "@actions/core": "^1.3.0",
+    "@actions/github": "^5.0.0",
+    "semantic-release": "^17.4.3",
+    "simple-git": "^2.39.0"
+  },
+  "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
@@ -23,7 +17,7 @@
     "@semantic-release/github": "^7.2.3",
     "@semantic-release/release-notes-generator": "^9.0.2",
     "eslint": "^7.27.0",
-    "esm": "^3.2.25",
+    "eslint-plugin-jsonc": "^1.2.1",
     "semantic-release-license": "^1.0.3"
   },
   "engines": {
@@ -32,10 +26,15 @@
   "files": [
     "/dist"
   ],
-  "dependencies": {
-    "@actions/core": "^1.3.0",
-    "@actions/github": "^5.0.0",
-    "semantic-release": "^17.4.3",
-    "simple-git": "^2.39.0"
-  }
+  "homepage": "https://github.com/sebbo2002/release-bot#readme",
+  "license": "MIT",
+  "name": "@sebbo2002/release-bot",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebbo2002/release-bot.git"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js,.json"
+  },
+  "version": "1.0.0-dev"
 }

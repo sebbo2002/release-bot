@@ -143,21 +143,21 @@ class ReleaseBot {
         }
 
         const title = `🎉 ${release.nextRelease.version}`;
-        let body = `### ℹ️ About this release\n` +
+        let body = '### ℹ️ About this release\n' +
             `* **Version**: ${release.nextRelease.version}\n` +
             `* **Type**: ${release.nextRelease.type}\n` +
-            `* **Last Release**: ` + (release.lastRelease && lastReleaseCommit ? (
-                `${release.lastRelease.version} (${new Date(lastReleaseCommit.data.committer.date).toLocaleString()}) `+
+            '* **Last Release**: ' + (release.lastRelease && lastReleaseCommit ? (
+            `${release.lastRelease.version} (${new Date(lastReleaseCommit.data.committer.date).toLocaleString()}) `+
                 `[[?](${lastReleaseCommit.data.html_url})]\n`
-            ) : '-\n') +
+        ) : '-\n') +
             `* **Commits to merge**: ${diff.data.ahead_by} [[?](${diff.data.permalink_url})]` +
             '\n' + release.nextRelease.notes
-                .substr(release.nextRelease.notes.indexOf('\n'))
-                .replace('### Bug Fixes\n', '### 🐛 Bug Fixes\n')
-                .replace('### Code Refactoring\n', '### 🚧 Code Refactoring\n')
-                .replace('### Features\n', '### 🆕 Features\n')
-                .replace('### BREAKING CHANGES\n', '### ⚡️ BREAKING CHANGES\n')
-                .trim();
+            .substr(release.nextRelease.notes.indexOf('\n'))
+            .replace('### Bug Fixes\n', '### 🐛 Bug Fixes\n')
+            .replace('### Code Refactoring\n', '### 🚧 Code Refactoring\n')
+            .replace('### Features\n', '### 🆕 Features\n')
+            .replace('### BREAKING CHANGES\n', '### ⚡️ BREAKING CHANGES\n')
+            .trim();
 
 
         [
