@@ -1,4 +1,4 @@
-module.exports = {
+const configuration = {
     'branches': [
         'main',
         {
@@ -7,23 +7,30 @@ module.exports = {
             'prerelease': true
         }
     ],
-    'plugins': [
-        ['@semantic-release/commit-analyzer', {
-            'releaseRules': [
-                {'type': 'build', 'scope': 'deps', 'release': 'patch'},
-                {'type': 'docs', 'release': 'patch'}
-            ]
-        }],
-        '@semantic-release/release-notes-generator',
-        '@semantic-release/changelog',
-        'semantic-release-license',
-        ['@semantic-release/github', {
-            'labels': false,
-            'assignees': process.env.GH_OWNER
-        }],
-        ['@semantic-release/git', {
-            'assets': ['CHANGELOG.md', 'LICENSE'],
-            'message': 'chore(release): :bookmark: ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
-        }]
-    ]
+    'plugins': []
 };
+
+configuration.plugins.push(['@semantic-release/commit-analyzer', {
+    'releaseRules': [
+        {'type': 'build', 'scope': 'deps', 'release': 'patch'},
+        {'type': 'docs', 'release': 'patch'}
+    ]
+}]);
+
+configuration.plugins.push('@semantic-release/release-notes-generator');
+
+configuration.plugins.push('@semantic-release/changelog');
+
+configuration.plugins.push('semantic-release-license');
+
+configuration.plugins.push(['@semantic-release/github', {
+    'labels': false,
+    'assignees': process.env.GH_OWNER
+}]);
+
+configuration.plugins.push(['@semantic-release/git', {
+    'assets': ['CHANGELOG.md', 'LICENSE'],
+    'message': 'chore(release): :bookmark: ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
+}]);
+
+module.exports = configuration;

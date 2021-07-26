@@ -11,11 +11,10 @@
   },
   "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
   "devDependencies": {
+    "@sebbo2002/semantic-release-docker": "^1.0.0-develop.1",
     "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/exec": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
-    "@semantic-release/github": "^7.2.3",
-    "@semantic-release/release-notes-generator": "^9.0.3",
     "eslint": "^7.30.0",
     "eslint-plugin-jsonc": "^1.4.0",
     "semantic-release-license": "^1.0.3"
