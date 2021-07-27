@@ -1,3 +1,10 @@
+# [2.0.0-develop.5](https://github.com/sebbo2002/release-bot/compare/v2.0.0-develop.4...v2.0.0-develop.5) (2021-07-27)
+
+
+### Bug Fixes
+
+* Handle add/remove of dependency types (e.g. devDependencies) ([9699df6](https://github.com/sebbo2002/release-bot/commit/9699df67917210af79d7ae83f3e885c7c72941c5))
+
 # [2.0.0-develop.4](https://github.com/sebbo2002/release-bot/compare/v2.0.0-develop.3...v2.0.0-develop.4) (2021-06-18)
 
 # [2.0.0-develop.3](https://github.com/sebbo2002/release-bot/compare/v2.0.0-develop.2...v2.0.0-develop.3) (2021-06-16)
