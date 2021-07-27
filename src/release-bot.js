@@ -232,8 +232,7 @@ class ReleaseBot {
         ].forEach(type => {
             Object.entries(newPackage[type] || {})
                 .forEach(([dependency, newVersion]) => {
-                    const oldVersion = oldPackage[type][dependency];
-                    if(!oldVersion) {
+                    if(!oldPackage[type] || !oldPackage[type][dependency]) {
                         result[type] = result[type] || [];
                         result[type].push(`* Added \`${dependency}\` \`${newVersion}\``);
                     }
@@ -241,7 +240,7 @@ class ReleaseBot {
 
             Object.entries(oldPackage[type] || {})
                 .forEach(([dependency, oldVersion]) => {
-                    const newVersion = newPackage[type][dependency];
+                    const newVersion = newPackage[type] ? newPackage[type][dependency] : null;
                     if(newVersion && newVersion !== oldVersion) {
                         result[type] = result[type] || [];
                         result[type].push(`* Update \`${dependency}\` from \`${oldVersion}\` to \`${newVersion}\``);
@@ -250,7 +249,7 @@ class ReleaseBot {
 
             Object.entries(oldPackage[type] || {})
                 .forEach(([dependency]) => {
-                    const newVersion = newPackage[type][dependency];
+                    const newVersion = newPackage[type] ? newPackage[type][dependency] : null;
                     if(!newVersion) {
                         result[type] = result[type] || [];
                         result[type].push(`* Removed \`${dependency}\``);
