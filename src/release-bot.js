@@ -143,21 +143,21 @@ class ReleaseBot {
         }
 
         const title = `🎉 ${release.nextRelease.version}`;
-        let body = `### ℹ️ About this release\n` +
+        let body = '### ℹ️ About this release\n' +
             `* **Version**: ${release.nextRelease.version}\n` +
             `* **Type**: ${release.nextRelease.type}\n` +
-            `* **Last Release**: ` + (release.lastRelease && lastReleaseCommit ? (
-                `${release.lastRelease.version} (${new Date(lastReleaseCommit.data.committer.date).toLocaleString()}) `+
+            '* **Last Release**: ' + (release.lastRelease && lastReleaseCommit ? (
+            `${release.lastRelease.version} (${new Date(lastReleaseCommit.data.committer.date).toLocaleString()}) `+
                 `[[?](${lastReleaseCommit.data.html_url})]\n`
-            ) : '-\n') +
+        ) : '-\n') +
             `* **Commits to merge**: ${diff.data.ahead_by} [[?](${diff.data.permalink_url})]` +
             '\n' + release.nextRelease.notes
-                .substr(release.nextRelease.notes.indexOf('\n'))
-                .replace('### Bug Fixes\n', '### 🐛 Bug Fixes\n')
-                .replace('### Code Refactoring\n', '### 🚧 Code Refactoring\n')
-                .replace('### Features\n', '### 🆕 Features\n')
-                .replace('### BREAKING CHANGES\n', '### ⚡️ BREAKING CHANGES\n')
-                .trim();
+            .substr(release.nextRelease.notes.indexOf('\n'))
+            .replace('### Bug Fixes\n', '### 🐛 Bug Fixes\n')
+            .replace('### Code Refactoring\n', '### 🚧 Code Refactoring\n')
+            .replace('### Features\n', '### 🆕 Features\n')
+            .replace('### BREAKING CHANGES\n', '### ⚡️ BREAKING CHANGES\n')
+            .trim();
 
 
         [
@@ -232,8 +232,7 @@ class ReleaseBot {
         ].forEach(type => {
             Object.entries(newPackage[type] || {})
                 .forEach(([dependency, newVersion]) => {
-                    const oldVersion = oldPackage[type][dependency];
-                    if(!oldVersion) {
+                    if(!oldPackage[type] || !oldPackage[type][dependency]) {
                         result[type] = result[type] || [];
                         result[type].push(`* Added \`${dependency}\` \`${newVersion}\``);
                     }
@@ -241,7 +240,7 @@ class ReleaseBot {
 
             Object.entries(oldPackage[type] || {})
                 .forEach(([dependency, oldVersion]) => {
-                    const newVersion = newPackage[type][dependency];
+                    const newVersion = newPackage[type] ? newPackage[type][dependency] : null;
                     if(newVersion && newVersion !== oldVersion) {
                         result[type] = result[type] || [];
                         result[type].push(`* Update \`${dependency}\` from \`${oldVersion}\` to \`${newVersion}\``);
@@ -250,7 +249,7 @@ class ReleaseBot {
 
             Object.entries(oldPackage[type] || {})
                 .forEach(([dependency]) => {
-                    const newVersion = newPackage[type][dependency];
+                    const newVersion = newPackage[type] ? newPackage[type][dependency] : null;
                     if(!newVersion) {
                         result[type] = result[type] || [];
                         result[type].push(`* Removed \`${dependency}\``);
