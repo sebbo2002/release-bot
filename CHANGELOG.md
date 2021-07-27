@@ -1,3 +1,20 @@
+# [2.0.0](https://github.com/sebbo2002/release-bot/compare/v1.0.4...v2.0.0) (2021-07-27)
+
+
+### Bug Fixes
+
+* Handle add/remove of dependency types (e.g. devDependencies) ([9699df6](https://github.com/sebbo2002/release-bot/commit/9699df67917210af79d7ae83f3e885c7c72941c5))
+
+
+### chore
+
+* Remove node.js 10 Support ([2b910c0](https://github.com/sebbo2002/release-bot/commit/2b910c09bc8a41085fc4472159494d8738d5521e))
+
+
+### BREAKING CHANGES
+
+* Removed support for node.js v10
+
 # [2.0.0-develop.5](https://github.com/sebbo2002/release-bot/compare/v2.0.0-develop.4...v2.0.0-develop.5) (2021-07-27)
 
 
