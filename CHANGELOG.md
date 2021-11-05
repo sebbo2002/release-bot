@@ -1,3 +1,5 @@
+## [2.0.1-develop.1](https://github.com/sebbo2002/release-bot/compare/v2.0.0...v2.0.1-develop.1) (2021-11-05)
+
 # [2.0.0](https://github.com/sebbo2002/release-bot/compare/v1.0.4...v2.0.0) (2021-07-27)
 
 
