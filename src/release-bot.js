@@ -106,6 +106,20 @@ class ReleaseBot {
         core.endGroup();
 
 
+        core.startGroup('Get user of provided token');
+        let tokenUserName = 'github-actions[bot]';
+        try {
+            const user = await this.client.rest.users.getAuthenticated();
+            core.info(JSON.stringify(user.data, null, '  '));
+            tokenUserName = user.data.login;
+        }
+        catch(error) {
+            core.info(String(error));
+            core.info(`Use default user name (= ${tokenUserName})`);
+        }
+        core.endGroup();
+
+
         // https://api.github.com/repos/sebbo2002/ical-generator/pulls?state=open&head=develop&base=main
         let pr = null;
         core.startGroup('Check pull requests');
@@ -125,7 +139,7 @@ class ReleaseBot {
             pr = prs.data[0];
             core.info(`Found at least one pull request, will reuse #${pr.number}`);
         }
-        if(pr && pr.user.login !== 'github-actions[bot]') {
+        if(pr && pr.user.login !== this.context.actor && pr.user.login !== tokenUserName) {
             core.endGroup();
             core.info('');
             core.info(`Pull request #${pr.number} was not created by this bot. Ignore PR and stop here…`);

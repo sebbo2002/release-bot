@@ -1,3 +1,17 @@
+## [2.0.2-develop.2](https://github.com/sebbo2002/release-bot/compare/v2.0.2-develop.1...v2.0.2-develop.2) (2022-01-12)
+
+
+### Bug Fixes
+
+* Handleerror if provided token is a github action token ([b174c8f](https://github.com/sebbo2002/release-bot/commit/b174c8f5c6bdf06cef8a4eb4afcc07453e00bda7))
+
+## [2.0.2-develop.1](https://github.com/sebbo2002/release-bot/compare/v2.0.1...v2.0.2-develop.1) (2022-01-11)
+
+
+### Bug Fixes
+
+* Don't ignore PR if token is not from github-actions[bot] ([c98d409](https://github.com/sebbo2002/release-bot/commit/c98d4099a45dd1eca5be4e3b30fc8aba1871288c))
+
 ## [2.0.1](https://github.com/sebbo2002/release-bot/compare/v2.0.0...v2.0.1) (2021-12-13)
 
 
