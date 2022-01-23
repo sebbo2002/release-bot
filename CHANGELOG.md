@@ -1,3 +1,10 @@
+# [2.1.0-develop.1](https://github.com/sebbo2002/release-bot/compare/v2.0.2...v2.1.0-develop.1) (2022-01-23)
+
+
+### Features
+
+* Remove release notes for 1.0.0 and below ([e38c137](https://github.com/sebbo2002/release-bot/commit/e38c137a125a4979aed93a003e4cef631b586e7c))
+
 ## [2.0.2](https://github.com/sebbo2002/release-bot/compare/v2.0.1...v2.0.2) (2022-01-12)
 
 
