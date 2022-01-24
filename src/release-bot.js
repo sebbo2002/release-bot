@@ -164,27 +164,29 @@ class ReleaseBot {
             `${release.lastRelease.version} (${new Date(lastReleaseCommit.data.committer.date).toLocaleString()}) `+
                 `[[?](${lastReleaseCommit.data.html_url})]\n`
         ) : '-\n') +
-            `* **Commits to merge**: ${diff.data.ahead_by} [[?](${diff.data.permalink_url})]` +
-            '\n' + release.nextRelease.notes
-            .substr(release.nextRelease.notes.indexOf('\n'))
-            .replace('### Bug Fixes\n', '### 🐛 Bug Fixes\n')
-            .replace('### Code Refactoring\n', '### 🚧 Code Refactoring\n')
-            .replace('### Features\n', '### 🆕 Features\n')
-            .replace('### BREAKING CHANGES\n', '### ⚡️ BREAKING CHANGES\n')
-            .trim();
+            `* **Commits to merge**: ${diff.data.ahead_by} [[?](${diff.data.permalink_url})]\n`;
 
+        if (!release.nextRelease.version.startsWith('1.0.0')) {
+            body += release.nextRelease.notes
+                .substr(release.nextRelease.notes.indexOf('\n'))
+                .replace('### Bug Fixes\n', '### 🐛 Bug Fixes\n')
+                .replace('### Code Refactoring\n', '### 🚧 Code Refactoring\n')
+                .replace('### Features\n', '### 🆕 Features\n')
+                .replace('### BREAKING CHANGES\n', '### ⚡️ BREAKING CHANGES\n')
+                .trim();
 
-        [
-            ['dependencies', 'Dependencies'],
-            ['devDependencies', 'Development Dependencies'],
-            ['peerDependencies', 'Peer Dependencies'],
-            ['bundledDependencies', 'Bundled Dependencies'],
-            ['optionalDependencies', 'Optional Dependencies']
-        ].forEach(([type, name]) => {
-            if(dependencies[type]) {
-                body += `\n\n### 📦 ${name}\n` + dependencies[type].join('\n');
-            }
-        });
+            [
+                ['dependencies', 'Dependencies'],
+                ['devDependencies', 'Development Dependencies'],
+                ['peerDependencies', 'Peer Dependencies'],
+                ['bundledDependencies', 'Bundled Dependencies'],
+                ['optionalDependencies', 'Optional Dependencies']
+            ].forEach(([type, name]) => {
+                if(dependencies[type]) {
+                    body += `\n\n### 📦 ${name}\n` + dependencies[type].join('\n');
+                }
+            });
+        }
 
         if(pr) {
             await this.client.rest.pulls.update({
