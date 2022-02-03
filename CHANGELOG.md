@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/sebbo2002/release-bot/compare/v2.1.0...v2.1.1) (2022-02-03)
+
+
+### Bug Fixes
+
+* Use node.js 16 in action ([ecae5b3](https://github.com/sebbo2002/release-bot/commit/ecae5b3ce552cdf4d6be6edbe398faf5060a1278))
+
 ## [2.1.1-develop.1](https://github.com/sebbo2002/release-bot/compare/v2.1.0...v2.1.1-develop.1) (2022-01-26)
 
 
