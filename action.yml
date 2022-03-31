@@ -16,7 +16,7 @@ inputs:
   min-release-age:
     description: 'The last release must be at least X days old before a new release PR is generated.'
     required: false
-    default: '7'
+    default: '14'
   assignee:
     description: 'User which gets the created pull request'
     required: false
