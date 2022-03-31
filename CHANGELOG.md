@@ -1,3 +1,17 @@
+# [2.2.0-develop.2](https://github.com/sebbo2002/release-bot/compare/v2.2.0-develop.1...v2.2.0-develop.2) (2022-03-31)
+
+
+### Features
+
+* Use semantic-release configuration from project if available ([19c32de](https://github.com/sebbo2002/release-bot/commit/19c32de567943c1666493bd6c84d6653b0b34553))
+
+# [2.2.0-develop.1](https://github.com/sebbo2002/release-bot/compare/v2.1.1...v2.2.0-develop.1) (2022-03-31)
+
+
+### Features
+
+* Use semantic-release configuration from project if available ([1ac3b5d](https://github.com/sebbo2002/release-bot/commit/1ac3b5d537a0e480c49c94cbb83bacb7726e1d49))
+
 ## [2.1.1](https://github.com/sebbo2002/release-bot/compare/v2.1.0...v2.1.1) (2022-02-03)
 
 
