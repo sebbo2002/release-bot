@@ -2,6 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const git = require('simple-git')();
 const semanticRelease = require('semantic-release');
+const {cosmiconfig} = require('cosmiconfig');
 const {Buffer} = require('buffer');
 
 class ReleaseBot {
@@ -76,18 +77,31 @@ class ReleaseBot {
         // Push fake branch to repo for semantic-release
         await git.push('origin', 'release-bot');
 
+        // Generate plugin list with project configuration
+        core.startGroup('Generate semantic release configuration');
+        const {config, filepath} = (await cosmiconfig('release').search()) || {};
+        let plugins = ['@semantic-release/commit-analyzer', '@semantic-release/release-notes-generator'];
+        if (config && filepath) {
+            core.info(`Use semantic-release configuration file ${filepath}`);
+            plugins = plugins.map(pluginName => {
+                const pluginConfig = config?.plugins?.find(config => Array.isArray(config) && config[0] === pluginName);
+                return [pluginName, pluginConfig ? pluginConfig[1] : {}];
+            });
+        }
+        core.info(JSON.stringify(plugins, null, '  '));
+        core.endGroup();
 
-        core.startGroup('Run Semantic Release');
+        core.startGroup('Run semantic-release');
         const release = await semanticRelease({
             branches: [...this.branches, 'release-bot'],
-            plugins: ['@semantic-release/commit-analyzer', '@semantic-release/release-notes-generator'],
+            plugins,
             dryRun: true
         });
 
         await git.push(['origin', '--delete', 'release-bot']);
         core.endGroup();
 
-        core.startGroup('Semantic Release Output');
+        core.startGroup('semantic-release Output');
         core.info(JSON.stringify(release, null, '  '));
         core.endGroup();
 
