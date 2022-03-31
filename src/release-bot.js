@@ -85,7 +85,7 @@ class ReleaseBot {
             core.info(`Use semantic-release configuration file ${filepath}`);
             plugins = plugins.map(pluginName => {
                 const pluginConfig = config?.plugins?.find(config => Array.isArray(config) && config[0] === pluginName);
-                return [pluginName, pluginConfig ? pluginConfig[1] : {}];
+                return pluginConfig ? [pluginName, pluginConfig[1]] : pluginName;
             });
         }
         core.info(JSON.stringify(plugins, null, '  '));
