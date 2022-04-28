@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/sebbo2002/release-bot/compare/v2.2.0...v3.0.0) (2022-04-28)
+
+
+### Features
+
+* Increase default min release age (7 → 14d) ([491c7a7](https://github.com/sebbo2002/release-bot/commit/491c7a7ffc28279b711527d9f726a5ac76a8106e))
+
+
+### BREAKING CHANGES
+
+* The default minimal release age change from 7 to 14 days. Please set `min-release-age`, if you prefer the old value.
+
 # [3.0.0-develop.3](https://github.com/sebbo2002/release-bot/compare/v3.0.0-develop.2...v3.0.0-develop.3) (2022-04-08)
 
 # [3.0.0-develop.2](https://github.com/sebbo2002/release-bot/compare/v3.0.0-develop.1...v3.0.0-develop.2) (2022-04-07)
