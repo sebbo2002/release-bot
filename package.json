@@ -4,11 +4,11 @@
     "url": "https://github.com/sebbo2002/release-bot/issues"
   },
   "dependencies": {
-    "@actions/core": "^1.6.0",
+    "@actions/core": "^1.8.0",
     "@actions/github": "^5.0.1",
     "cosmiconfig": "^7.0.1",
     "semantic-release": "^19.0.2",
-    "simple-git": "^3.5.0"
+    "simple-git": "^3.7.1"
   },
   "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
   "devDependencies": {
