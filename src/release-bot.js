@@ -40,13 +40,13 @@ class ReleaseBot {
             per_page: 5,
             page: 1
         });
+        let draft = false;
         if(commits.data.length > 0) {
             const latestCommit = commits.data[0].commit;
             const latestCommitDate = new Date(latestCommit.committer.date);
             if(latestCommitDate.getTime() > new Date().getTime() - this.minReleaseAge) {
-                core.info('Last commit in release branch is quite new');
-                core.info('Woun\'t create a new release, bye…');
-                return;
+                core.info('Last commit in release branch is quite new, will do a PR draft only…');
+                draft = true;
             }
         }
 
@@ -181,13 +181,15 @@ class ReleaseBot {
             `* **Commits to merge**: ${diff.data.ahead_by} [[?](${diff.data.permalink_url})]\n`;
 
         if (!release.nextRelease.version.startsWith('1.0.0')) {
-            body += release.nextRelease.notes
+            const notes = release.nextRelease.notes
                 .substr(release.nextRelease.notes.indexOf('\n'))
                 .replace('### Bug Fixes\n', '### 🐛 Bug Fixes\n')
                 .replace('### Code Refactoring\n', '### 🚧 Code Refactoring\n')
                 .replace('### Features\n', '### 🆕 Features\n')
                 .replace('### BREAKING CHANGES\n', '### ⚡️ BREAKING CHANGES\n')
                 .trim();
+
+            body += notes;
 
             [
                 ['dependencies', 'Dependencies'],
@@ -200,6 +202,17 @@ class ReleaseBot {
                     body += `\n\n### 📦 ${name}\n` + dependencies[type].join('\n');
                 }
             });
+
+            if(
+                !notes &&
+                !dependencies.dependencies &&
+                !dependencies.peerDependencies &&
+                !dependencies.bundledDependencies &&
+                !dependencies.optionalDependencies
+            ) {
+                core.info('Empty release notes and no relevant dependency changes, mark PR as a draft…');
+                draft = true;
+            }
         }
 
         if(pr) {
@@ -207,7 +220,8 @@ class ReleaseBot {
                 ...this.context.repo,
                 pull_number: pr.number,
                 title,
-                body
+                body,
+                draft
             });
 
             core.info(`🎉 Updated Pull Request ${pr.number}:`);
@@ -217,11 +231,12 @@ class ReleaseBot {
                 base: this.branches[1],
                 head: this.branches[0],
                 title,
-                body
+                body,
+                draft
             });
             pr = c.data;
 
-            if(this.assignees.length) {
+            if(!draft && this.assignees.length) {
                 await this.client.rest.issues.addAssignees({
                     ...this.context.repo,
                     issue_number: pr.number,
