@@ -185,6 +185,7 @@ class ReleaseBot {
                 .replace('### Bug Fixes\n', '### 🐛 Bug Fixes\n')
                 .replace('### Code Refactoring\n', '### 🚧 Code Refactoring\n')
                 .replace('### Features\n', '### 🆕 Features\n')
+                .replace('### Reverts\n', '### ↩️ Reverts\n')
                 .replace('### BREAKING CHANGES\n', '### ⚡️ BREAKING CHANGES\n')
                 .trim();
 
@@ -214,7 +215,7 @@ class ReleaseBot {
             }
         }
 
-        const title = `${draft ? '✏️' : '🎉'} ${release.nextRelease.version}${draft ? '[WIP]' : ''}`;
+        const title = `${draft ? '✏️' : '🎉'} ${release.nextRelease.version}`;
         if(pr) {
             await this.client.rest.pulls.update({
                 ...this.context.repo,
