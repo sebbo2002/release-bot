@@ -1,3 +1,5 @@
+# [3.1.0-develop.8](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.7...v3.1.0-develop.8) (2022-05-19)
+
 # [3.1.0-develop.7](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.6...v3.1.0-develop.7) (2022-05-19)
 
 
