@@ -1,3 +1,10 @@
+# [3.1.0-develop.1](https://github.com/sebbo2002/release-bot/compare/v3.0.1...v3.1.0-develop.1) (2022-05-19)
+
+
+### Features
+
+* Mark PR as draft if last release < min or if no relevant changes in release ([20495fa](https://github.com/sebbo2002/release-bot/commit/20495fa485f9403233016c577859fd41c7e3078e))
+
 ## [3.0.1](https://github.com/sebbo2002/release-bot/compare/v3.0.0...v3.0.1) (2022-05-14)
 
 ## [3.0.1-develop.5](https://github.com/sebbo2002/release-bot/compare/v3.0.1-develop.4...v3.0.1-develop.5) (2022-05-14)
