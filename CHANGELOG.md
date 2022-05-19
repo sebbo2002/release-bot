@@ -1,3 +1,10 @@
+# [3.1.0-develop.7](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.6...v3.1.0-develop.7) (2022-05-19)
+
+
+### Features
+
+* Change emoji depending on draft status ([cea5c9b](https://github.com/sebbo2002/release-bot/commit/cea5c9bf9bc871aae198670b3615798449367121))
+
 # [3.1.0-develop.6](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.5...v3.1.0-develop.6) (2022-05-19)
 
 
