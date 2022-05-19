@@ -1,3 +1,10 @@
+# [3.1.0-develop.2](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.1...v3.1.0-develop.2) (2022-05-19)
+
+
+### Bug Fixes
+
+* Update draft status for existing pull requests ([c210380](https://github.com/sebbo2002/release-bot/commit/c21038035993554f471eecf5164532fb10d1209e))
+
 # [3.1.0-develop.1](https://github.com/sebbo2002/release-bot/compare/v3.0.1...v3.1.0-develop.1) (2022-05-19)
 
 
