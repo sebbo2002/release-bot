@@ -223,14 +223,6 @@ class ReleaseBot {
                 body
             });
 
-            if(pr.draft !== draft) {
-                await this.client.rest.issues.update({
-                    ...this.context.repo,
-                    issue_number: pr.number,
-                    draft
-                });
-            }
-
             core.info(`🎉 Updated Pull Request ${pr.number}:`);
         } else {
             const c = await this.client.rest.pulls.create({
@@ -243,15 +235,15 @@ class ReleaseBot {
             });
             pr = c.data;
 
-            if(!draft && this.assignees.length) {
-                await this.client.rest.issues.addAssignees({
-                    ...this.context.repo,
-                    issue_number: pr.number,
-                    assignees: this.assignees
-                });
-            }
-
             core.info(`🎉 Created Pull Request #${pr.number}:`);
+        }
+
+        if(!draft && this.assignees.length) {
+            await this.client.rest.issues.addAssignees({
+                ...this.context.repo,
+                issue_number: pr.number,
+                assignees: this.assignees
+            });
         }
 
         core.info('   ' + pr.html_url);
