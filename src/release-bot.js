@@ -220,9 +220,16 @@ class ReleaseBot {
                 ...this.context.repo,
                 pull_number: pr.number,
                 title,
-                body,
-                draft
+                body
             });
+
+            if(pr.draft !== draft) {
+                await this.client.rest.issues.update({
+                    ...this.context.repo,
+                    issue_number: pr.number,
+                    draft
+                });
+            }
 
             core.info(`🎉 Updated Pull Request ${pr.number}:`);
         } else {
