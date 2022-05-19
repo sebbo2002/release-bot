@@ -170,7 +170,6 @@ class ReleaseBot {
             core.warning('Unable to get package.json: ' + error.stack);
         }
 
-        const title = `🎉 ${release.nextRelease.version}`;
         let body = '### ℹ️ About this release\n' +
             `* **Version**: ${release.nextRelease.version}\n` +
             `* **Type**: ${release.nextRelease.type}\n` +
@@ -215,6 +214,7 @@ class ReleaseBot {
             }
         }
 
+        const title = `${draft ? '✏️' : '🎉'} ${release.nextRelease.version}${draft ? '[WIP]' : ''}`;
         if(pr) {
             await this.client.rest.pulls.update({
                 ...this.context.repo,
