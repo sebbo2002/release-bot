@@ -1,3 +1,10 @@
+# [3.1.0-develop.3](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.2...v3.1.0-develop.3) (2022-05-19)
+
+
+### Bug Fixes
+
+* Add assignees on existing PRs ([0724080](https://github.com/sebbo2002/release-bot/commit/072408091ea724243e0aa4b37e343f24445ba0b4))
+
 # [3.1.0-develop.2](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.1...v3.1.0-develop.2) (2022-05-19)
 
 
