@@ -1,3 +1,10 @@
+# [3.1.0-develop.4](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.3...v3.1.0-develop.4) (2022-05-19)
+
+
+### Features
+
+* Draft / undraft existing PRs if state changes ([bf1045d](https://github.com/sebbo2002/release-bot/commit/bf1045de452c24fa9993d182e23141d3d62e11f9))
+
 # [3.1.0-develop.3](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.2...v3.1.0-develop.3) (2022-05-19)
 
 
