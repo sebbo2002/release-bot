@@ -230,12 +230,26 @@ class ReleaseBot {
                 base: this.branches[1],
                 head: this.branches[0],
                 title,
-                body,
-                draft
+                body
             });
             pr = c.data;
 
             core.info(`🎉 Created Pull Request #${pr.number}:`);
+        }
+
+        console.log(this.client.graphql);
+        if(pr.draft && !draft) {
+            await this.client.graphql(`mutation undraft($id: ID!) {
+              markPullRequestReadyForReview(input: {pullRequestId: $id}) {
+                __typename
+              }
+            }`, { id: pr.node_id });
+        } else if(!pr.draft && draft) {
+            await this.client.graphql(`mutation undraft($id: ID!) {
+              convertPullRequestToDraft(input: {pullRequestId: $id}) {
+                __typename
+              }
+            }`, { id: pr.node_id });
         }
 
         if(!draft && this.assignees.length) {
