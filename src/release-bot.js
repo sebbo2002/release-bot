@@ -220,7 +220,8 @@ class ReleaseBot {
                 ...this.context.repo,
                 pull_number: pr.number,
                 title,
-                body
+                body,
+                draft
             });
 
             core.info(`🎉 Updated Pull Request ${pr.number}:`);
@@ -235,21 +236,6 @@ class ReleaseBot {
             pr = c.data;
 
             core.info(`🎉 Created Pull Request #${pr.number}:`);
-        }
-
-        console.log(this.client.graphql);
-        if(pr.draft && !draft) {
-            await this.client.graphql(`mutation undraft($id: ID!) {
-              markPullRequestReadyForReview(input: {pullRequestId: $id}) {
-                __typename
-              }
-            }`, { id: pr.node_id });
-        } else if(!pr.draft && draft) {
-            await this.client.graphql(`mutation undraft($id: ID!) {
-              convertPullRequestToDraft(input: {pullRequestId: $id}) {
-                __typename
-              }
-            }`, { id: pr.node_id });
         }
 
         if(!draft && this.assignees.length) {

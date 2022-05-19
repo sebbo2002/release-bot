@@ -10,7 +10,9 @@ jobs:
   release-bot:
     runs-on: ubuntu-latest
     if: ${{ github.repository != 'sebbo2002/js-template' }}
-    permissions: write-all
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: ☁️ Checkout Project
         uses: actions/checkout@v3
