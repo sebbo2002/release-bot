@@ -1,3 +1,10 @@
+# [3.1.0-develop.6](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.5...v3.1.0-develop.6) (2022-05-19)
+
+
+### Reverts
+
+* Revert "fix: Update draft status for existing pull requests" ([8a25574](https://github.com/sebbo2002/release-bot/commit/8a25574115e77f9f92dcde3cb656efcffa29019a))
+
 # [3.1.0-develop.5](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.4...v3.1.0-develop.5) (2022-05-19)
 
 
