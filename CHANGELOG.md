@@ -1,3 +1,10 @@
+# [3.1.0-develop.12](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.11...v3.1.0-develop.12) (2022-05-20)
+
+
+### Reverts
+
+* Revert "ci: Remove docker setup" ([655068b](https://github.com/sebbo2002/release-bot/commit/655068b3b9c6139181ae87421db5f8144fae3e18))
+
 # [3.1.0-develop.11](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.10...v3.1.0-develop.11) (2022-05-20)
 
 
