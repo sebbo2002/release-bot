@@ -18,6 +18,7 @@ jobs:
         with:
           repository: sebbo2002/release-bot
           path: ./.actions/release-bot
+          ref: develop
       - name: 🔧 Setup node
         uses: actions/setup-node@v3
         with:

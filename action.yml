@@ -1,0 +1,31 @@
+name: 'Semantic ReleaseBot'
+author: 'Sebastian Pekarek'
+description: 'Checks development and release branches and creates a release PR when it is time for a release again.'
+inputs:
+  token:
+    description: 'GitHub Token to be used'
+    required: true
+  develop-branch:
+    description: 'Your development branch'
+    required: true
+    default: 'develop'
+  release-branch:
+    description: 'Your release branch'
+    required: true
+    default: 'main'
+  min-release-age:
+    description: 'The last release must be at least X days old before a new release PR is generated.'
+    required: false
+    default: '14'
+  assignee:
+    description: 'User which gets the created pull request'
+    required: false
+outputs:
+  pr-url:
+    description: 'Link to current release pull request'
+runs:
+  using: 'node16'
+  main: 'src/index.js'
+branding:
+  icon: git-pull-request
+  color: yellow
