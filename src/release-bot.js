@@ -239,6 +239,19 @@ class ReleaseBot {
             core.info(`🎉 Created Pull Request #${pr.number}:`);
         }
 
+        if(pr.draft !== draft) {
+            try {
+                await this.client.graphql(`mutation changeDraftState($id: ID!) {
+                    ${draft ? 'convertPullRequestToDraft' : 'markPullRequestReadyForReview'}(input: {pullRequestId: $id}) {
+                        __typename
+                    }
+                }`, { id: pr.node_id });
+            }
+            catch(error) {
+                core.warning(`Unable to update draft state: ${error} - do you use a private access token?`)
+            }
+        }
+
         if(!draft && this.assignees.length) {
             await this.client.rest.issues.addAssignees({
                 ...this.context.repo,
