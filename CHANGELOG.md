@@ -1,3 +1,10 @@
+# [3.1.0-develop.11](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.10...v3.1.0-develop.11) (2022-05-20)
+
+
+### Reverts
+
+* Revert "ci: Remove GH_TOKEN and use GITHUB_TOKEN" ([b5c2eb6](https://github.com/sebbo2002/release-bot/commit/b5c2eb66170b38bda1e49ad5bb5cf02bd13eb8e4))
+
 # [3.1.0-develop.10](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.9...v3.1.0-develop.10) (2022-05-20)
 
 
