@@ -1,3 +1,10 @@
+# [3.1.0-develop.9](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.8...v3.1.0-develop.9) (2022-05-19)
+
+
+### Features
+
+* Add emoji for "Reverts" headline ([7e1fe56](https://github.com/sebbo2002/release-bot/commit/7e1fe56d43aec52f45e065beddecd5df464cd5d8))
+
 # [3.1.0-develop.8](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.7...v3.1.0-develop.8) (2022-05-19)
 
 # [3.1.0-develop.7](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.6...v3.1.0-develop.7) (2022-05-19)

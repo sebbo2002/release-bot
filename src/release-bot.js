@@ -248,7 +248,7 @@ class ReleaseBot {
                 }`, { id: pr.node_id });
             }
             catch(error) {
-                core.warning(`Unable to update draft state: ${error} - do you use a private access token?`)
+                core.warning(`Unable to update draft state: ${error} - do you use a private access token?`);
             }
         }
 
