@@ -1,3 +1,10 @@
+# [3.1.0-develop.10](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.9...v3.1.0-develop.10) (2022-05-20)
+
+
+### Features
+
+* Try to set draft state, but warn only if not possible ([e6667ed](https://github.com/sebbo2002/release-bot/commit/e6667ed233caef863ab94b05748be7e2ca410206))
+
 # [3.1.0-develop.9](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.8...v3.1.0-develop.9) (2022-05-19)
 
 
