@@ -214,6 +214,11 @@ class ReleaseBot {
                 draft = true;
             }
         }
+        if(!pr && draft && process.env.GITHUB_EVENT_NAME && process.env.GITHUB_EVENT_NAME !== 'workflow_dispatch') {
+            core.info('Okay, no release would be necessary here in my eyes.');
+            core.info('Start me again manually, if I should create a PR anyway.');
+            return;
+        }
 
         const title = `${draft ? '✏️' : '🎉'} ${release.nextRelease.version}`;
         if(pr) {
