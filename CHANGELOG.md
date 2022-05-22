@@ -1,3 +1,10 @@
+# [3.1.0-develop.13](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.12...v3.1.0-develop.13) (2022-05-22)
+
+
+### Features
+
+* Do not create draft PRs automatically, only on manual start (via workflow_dispatch) ([6a06866](https://github.com/sebbo2002/release-bot/commit/6a06866ad81a848b0d8b4a892fb739b6e35d9e2a))
+
 # [3.1.0-develop.12](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.11...v3.1.0-develop.12) (2022-05-20)
 
 
