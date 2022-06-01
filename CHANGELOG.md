@@ -1,3 +1,28 @@
+# [3.1.0](https://github.com/sebbo2002/release-bot/compare/v3.0.1...v3.1.0) (2022-06-01)
+
+
+### Bug Fixes
+
+* Add assignees on existing PRs ([0724080](https://github.com/sebbo2002/release-bot/commit/072408091ea724243e0aa4b37e343f24445ba0b4))
+
+
+### Features
+
+* Add emoji for "Reverts" headline ([7e1fe56](https://github.com/sebbo2002/release-bot/commit/7e1fe56d43aec52f45e065beddecd5df464cd5d8))
+* Change emoji depending on draft status ([cea5c9b](https://github.com/sebbo2002/release-bot/commit/cea5c9bf9bc871aae198670b3615798449367121))
+* Do not create draft PRs automatically, only on manual start (via workflow_dispatch) ([6a06866](https://github.com/sebbo2002/release-bot/commit/6a06866ad81a848b0d8b4a892fb739b6e35d9e2a))
+* Draft / undraft existing PRs if state changes ([90f9912](https://github.com/sebbo2002/release-bot/commit/90f9912dcdbaf71d4a53f525f68ef17d547dc30c))
+* Draft / undraft existing PRs if state changes ([bf1045d](https://github.com/sebbo2002/release-bot/commit/bf1045de452c24fa9993d182e23141d3d62e11f9))
+* Mark PR as draft if last release < min or if no relevant changes in release ([20495fa](https://github.com/sebbo2002/release-bot/commit/20495fa485f9403233016c577859fd41c7e3078e))
+* Try to set draft state, but warn only if not possible ([e6667ed](https://github.com/sebbo2002/release-bot/commit/e6667ed233caef863ab94b05748be7e2ca410206))
+
+
+### Reverts
+
+* Revert "ci: Remove GH_TOKEN and use GITHUB_TOKEN" ([b5c2eb6](https://github.com/sebbo2002/release-bot/commit/b5c2eb66170b38bda1e49ad5bb5cf02bd13eb8e4))
+* Revert "ci: Remove docker setup" ([14a5226](https://github.com/sebbo2002/release-bot/commit/14a5226c828f173fe23b1d0033f825c73e848038))
+* Revert "ci: Remove docker setup" ([655068b](https://github.com/sebbo2002/release-bot/commit/655068b3b9c6139181ae87421db5f8144fae3e18))
+
 # [3.1.0-develop.13](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.12...v3.1.0-develop.13) (2022-05-22)
 
 
