@@ -1,3 +1,89 @@
+# [3.1.0-develop.13](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.12...v3.1.0-develop.13) (2022-05-22)
+
+
+### Features
+
+* Do not create draft PRs automatically, only on manual start (via workflow_dispatch) ([6a06866](https://github.com/sebbo2002/release-bot/commit/6a06866ad81a848b0d8b4a892fb739b6e35d9e2a))
+
+# [3.1.0-develop.12](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.11...v3.1.0-develop.12) (2022-05-20)
+
+
+### Reverts
+
+* Revert "ci: Remove docker setup" ([655068b](https://github.com/sebbo2002/release-bot/commit/655068b3b9c6139181ae87421db5f8144fae3e18))
+
+# [3.1.0-develop.11](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.10...v3.1.0-develop.11) (2022-05-20)
+
+
+### Reverts
+
+* Revert "ci: Remove GH_TOKEN and use GITHUB_TOKEN" ([b5c2eb6](https://github.com/sebbo2002/release-bot/commit/b5c2eb66170b38bda1e49ad5bb5cf02bd13eb8e4))
+
+# [3.1.0-develop.10](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.9...v3.1.0-develop.10) (2022-05-20)
+
+
+### Features
+
+* Try to set draft state, but warn only if not possible ([e6667ed](https://github.com/sebbo2002/release-bot/commit/e6667ed233caef863ab94b05748be7e2ca410206))
+
+# [3.1.0-develop.9](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.8...v3.1.0-develop.9) (2022-05-19)
+
+
+### Features
+
+* Add emoji for "Reverts" headline ([7e1fe56](https://github.com/sebbo2002/release-bot/commit/7e1fe56d43aec52f45e065beddecd5df464cd5d8))
+
+# [3.1.0-develop.8](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.7...v3.1.0-develop.8) (2022-05-19)
+
+# [3.1.0-develop.7](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.6...v3.1.0-develop.7) (2022-05-19)
+
+
+### Features
+
+* Change emoji depending on draft status ([cea5c9b](https://github.com/sebbo2002/release-bot/commit/cea5c9bf9bc871aae198670b3615798449367121))
+
+# [3.1.0-develop.6](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.5...v3.1.0-develop.6) (2022-05-19)
+
+
+### Reverts
+
+* Revert "fix: Update draft status for existing pull requests" ([8a25574](https://github.com/sebbo2002/release-bot/commit/8a25574115e77f9f92dcde3cb656efcffa29019a))
+
+# [3.1.0-develop.5](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.4...v3.1.0-develop.5) (2022-05-19)
+
+
+### Features
+
+* Draft / undraft existing PRs if state changes ([90f9912](https://github.com/sebbo2002/release-bot/commit/90f9912dcdbaf71d4a53f525f68ef17d547dc30c))
+
+# [3.1.0-develop.4](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.3...v3.1.0-develop.4) (2022-05-19)
+
+
+### Features
+
+* Draft / undraft existing PRs if state changes ([bf1045d](https://github.com/sebbo2002/release-bot/commit/bf1045de452c24fa9993d182e23141d3d62e11f9))
+
+# [3.1.0-develop.3](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.2...v3.1.0-develop.3) (2022-05-19)
+
+
+### Bug Fixes
+
+* Add assignees on existing PRs ([0724080](https://github.com/sebbo2002/release-bot/commit/072408091ea724243e0aa4b37e343f24445ba0b4))
+
+# [3.1.0-develop.2](https://github.com/sebbo2002/release-bot/compare/v3.1.0-develop.1...v3.1.0-develop.2) (2022-05-19)
+
+
+### Bug Fixes
+
+* Update draft status for existing pull requests ([c210380](https://github.com/sebbo2002/release-bot/commit/c21038035993554f471eecf5164532fb10d1209e))
+
+# [3.1.0-develop.1](https://github.com/sebbo2002/release-bot/compare/v3.0.1...v3.1.0-develop.1) (2022-05-19)
+
+
+### Features
+
+* Mark PR as draft if last release < min or if no relevant changes in release ([20495fa](https://github.com/sebbo2002/release-bot/commit/20495fa485f9403233016c577859fd41c7e3078e))
+
 ## [3.0.1](https://github.com/sebbo2002/release-bot/compare/v3.0.0...v3.0.1) (2022-05-14)
 
 ## [3.0.1-develop.5](https://github.com/sebbo2002/release-bot/compare/v3.0.1-develop.4...v3.0.1-develop.5) (2022-05-14)
