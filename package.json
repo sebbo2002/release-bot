@@ -1,61 +1,42 @@
 {
   "author": "Sebastian Pekarek <mail@sebbo.net>",
-  "bin": {
-    "test-cli": "./dist/bin/cli.js"
-  },
   "bugs": {
-    "url": "https://github.com/sebbo2002/js-template/issues"
+    "url": "https://github.com/sebbo2002/release-bot/issues"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "@actions/core": "^1.9.0",
+    "@actions/github": "^5.0.3",
+    "cosmiconfig": "^7.0.1",
+    "semantic-release": "^19.0.3",
+    "simple-git": "^3.7.1"
   },
-  "description": "A template that I use to start new projects and services.",
+  "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
   "devDependencies": {
-    "@amanda-mitchell/semantic-release-npm-multiple": "^2.15.0",
-    "@qiwi/semantic-release-gh-pages-plugin": "^5.1.1",
     "@sebbo2002/semantic-release-docker": "^1.0.0-develop.1",
-    "@semantic-release/changelog": "^6.0.0",
-    "@semantic-release/exec": "^6.0.1",
-    "@semantic-release/git": "^10.0.0",
-    "@semantic-release/release-notes-generator": "^10.0.3",
-    "eslint": "^8.3.0",
-    "eslint-plugin-jsonc": "^2.0.0",
-    "license-checker": "^25.0.1",
-    "mocha": "^9.1.2",
-    "mochawesome": "^7.0.1",
-    "rollup": "^2.60.1",
-    "rollup-plugin-preserve-shebang": "^1.0.1",
-    "semantic-release-license": "^1.0.3",
-    "source-map-support": "^0.5.20"
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "eslint": "^8.16.0",
+    "eslint-plugin-jsonc": "^2.3.0",
+    "semantic-release-license": "^1.0.3"
   },
   "engines": {
     "node": ">=12.0.0"
-  },
-  "exports": {
-    "import": "./src/index.js",
-    "require": "./dist/index.cjs"
   },
   "files": [
     "/dist",
     "/src"
   ],
-  "homepage": "https://github.com/sebbo2002/js-template#readme",
+  "homepage": "https://github.com/sebbo2002/release-bot#readme",
   "license": "MIT",
-  "main": "./dist/index.cjs",
-  "name": "@sebbo2002/js-template-test",
+  "name": "@sebbo2002/release-bot",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebbo2002/js-template.git"
+    "url": "git+https://github.com/sebbo2002/release-bot.git"
   },
   "scripts": {
-    "build": "rollup -c && chmod +x ./dist/bin/*.cjs ./src/bin/*.js",
-    "build-all": "./.github/workflows/build.sh",
-    "develop": "rollup -c --watch",
-    "license-check": "license-checker --production --summary",
     "lint": "eslint . --ext .js,.json",
-    "start": "node ./dist/bin/start.js",
-    "test": "mocha"
+    "test": "echo \"No tests specified.\""
   },
-  "type": "module",
-  "version": "1.0.0"
+  "version": "1.0.0-dev"
 }
