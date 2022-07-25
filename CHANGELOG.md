@@ -1,3 +1,19 @@
+# [4.0.0-develop.2](https://github.com/sebbo2002/release-bot/compare/v4.0.0-develop.1...v4.0.0-develop.2) (2022-07-20)
+
+# [4.0.0-develop.1](https://github.com/sebbo2002/release-bot/compare/v3.1.2-develop.1...v4.0.0-develop.1) (2022-07-16)
+
+
+### Build System
+
+* Native ESM support ([7b86a4f](https://github.com/sebbo2002/release-bot/commit/7b86a4f1187c387a3a5792e1fb72d822b04e3631))
+
+
+### BREAKING CHANGES
+
+* Only Support for node.js ^12.20.0 || >=14.13.1
+
+## [3.1.2-develop.1](https://github.com/sebbo2002/release-bot/compare/v3.1.1...v3.1.2-develop.1) (2022-06-25)
+
 ## [3.1.1](https://github.com/sebbo2002/release-bot/compare/v3.1.0...v3.1.1) (2022-06-22)
 
 ## [3.1.1-develop.4](https://github.com/sebbo2002/release-bot/compare/v3.1.1-develop.3...v3.1.1-develop.4) (2022-06-22)
