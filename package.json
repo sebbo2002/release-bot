@@ -8,15 +8,15 @@
     "@actions/github": "^5.0.3",
     "cosmiconfig": "^7.0.1",
     "semantic-release": "^19.0.3",
-    "simple-git": "^3.10.0"
+    "simple-git": "^3.11.0"
   },
   "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
   "devDependencies": {
-    "@sebbo2002/semantic-release-docker": "^1.0.0-develop.1",
+    "@sebbo2002/semantic-release-docker": "^2.0.1",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "eslint": "^8.19.0",
+    "eslint": "^8.20.0",
     "eslint-plugin-jsonc": "^2.3.1",
     "semantic-release-license": "^1.0.3"
   },
