@@ -5,19 +5,19 @@
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.0",
-    "cosmiconfig": "^7.0.1",
+    "@actions/github": "^5.1.1",
+    "cosmiconfig": "^8.0.0",
     "semantic-release": "^19.0.5",
-    "simple-git": "^3.14.1"
+    "simple-git": "^3.15.1"
   },
   "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
   "devDependencies": {
-    "@sebbo2002/semantic-release-docker": "^2.0.1",
-    "@semantic-release/changelog": "^6.0.1",
+    "@sebbo2002/semantic-release-docker": "^2.1.0",
+    "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "eslint": "^8.25.0",
-    "eslint-plugin-jsonc": "^2.4.0",
+    "eslint": "^8.29.0",
+    "eslint-plugin-jsonc": "^2.5.0",
     "semantic-release-license": "^1.0.3"
   },
   "engines": {
