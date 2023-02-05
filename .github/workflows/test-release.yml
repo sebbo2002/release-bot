@@ -1,16 +1,18 @@
 name: Test & Release
 on:
   push:
-    branches:
-      - develop
-      - main
+    branches-ignore:
+      - 'gh-pages'
+      - 'depfu/**'
+      - 'dependabot/**'
+      - 'template-updater/**'
   pull_request: null
 
 jobs:
   tests:
     name: Unit Tests
     runs-on: ubuntu-latest
-    if: contains(toJson(github.event.commits.*.message), '[skip ci]') == false || github.ref == 'refs/heads/main'
+    if: github.repository != 'sebbo2002/js-template' && (contains(toJson(github.event.commits.*.message), '[skip ci]') == false || github.ref == 'refs/heads/main')
     strategy:
       matrix:
         node: [14.x, 16.x, 18.x]
@@ -37,6 +39,7 @@ jobs:
       - name: 🔧 Setup node.js
         uses: actions/setup-node@v3
         with:
+          node-version: 18
           cache: 'npm'
       - name: 📦 Install dependencies
         run: npm ci
@@ -57,6 +60,7 @@ jobs:
       - name: 🔧 Setup node.js
         uses: actions/setup-node@v3
         with:
+          node-version: 18
           cache: 'npm'
       - name: 📦 Install dependencies
         run: npm ci
@@ -72,8 +76,8 @@ jobs:
           GITHUB_NPM_TOKEN: ${{ secrets.GH_TOKEN }}
           PUBLIC_NPM_CONFIG_REGISTRY: https://registry.npmjs.org
           PUBLIC_NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          DOCKER_LOCAL_IMAGE_GH: ${{ steps.github.outputs.image }}
-          DOCKER_LOCAL_IMAGE_DH: ${{ steps.dockerhub.outputs.image }}
+          DOCKER_LOCAL_IMAGE_GH: ghcr.io/${{ github.repository }}:${{ github.sha }}
+          DOCKER_LOCAL_IMAGE_DH: ${{ github.repository }}:${{ github.sha }}
       - name: 🔃 Merge main back into develop
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: everlytic/branch-merge@1.1.5
