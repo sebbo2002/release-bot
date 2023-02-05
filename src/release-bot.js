@@ -1,7 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const git = require('simple-git')();
-const semanticRelease = require('semantic-release');
 const {cosmiconfig} = require('cosmiconfig');
 const {Buffer} = require('buffer');
 
@@ -92,6 +91,7 @@ class ReleaseBot {
         core.endGroup();
 
         core.startGroup('Run semantic-release');
+        const semanticRelease = await import('semantic-release');
         const release = await semanticRelease({
             branches: [...this.branches, 'release-bot'],
             plugins,
