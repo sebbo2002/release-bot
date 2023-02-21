@@ -1,3 +1,10 @@
+## [4.0.7-develop.1](https://github.com/sebbo2002/release-bot/compare/v4.0.6...v4.0.7-develop.1) (2023-02-21)
+
+
+### Bug Fixes
+
+* Fix semantic-release import ([0b9dc54](https://github.com/sebbo2002/release-bot/commit/0b9dc5447e538b28c9a7632e1a9859b6b86e9b32))
+
 ## [4.0.6](https://github.com/sebbo2002/release-bot/compare/v4.0.5...v4.0.6) (2023-02-05)
 
 
