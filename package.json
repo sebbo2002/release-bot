@@ -8,7 +8,7 @@
     "@actions/github": "^5.1.1",
     "cosmiconfig": "^8.0.0",
     "semantic-release": "^20.1.0",
-    "simple-git": "^3.16.0"
+    "simple-git": "^3.16.1"
   },
   "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
   "devDependencies": {
