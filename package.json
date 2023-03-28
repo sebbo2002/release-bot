@@ -16,8 +16,8 @@
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "eslint": "^8.35.0",
-    "eslint-plugin-jsonc": "^2.6.0",
+    "eslint": "^8.36.0",
+    "eslint-plugin-jsonc": "^2.7.0",
     "semantic-release-license": "^1.0.3"
   },
   "engines": {
