@@ -91,7 +91,7 @@ class ReleaseBot {
         core.endGroup();
 
         core.startGroup('Run semantic-release');
-        const semanticRelease = await import('semantic-release');
+        const { default: semanticRelease } = await import('semantic-release');
         const release = await semanticRelease({
             branches: [...this.branches, 'release-bot'],
             plugins,
