@@ -4,19 +4,19 @@
     "url": "https://github.com/sebbo2002/release-bot/issues"
   },
   "dependencies": {
-    "@actions/core": "^1.10.0",
+    "@actions/core": "^1.10.1",
     "@actions/github": "^5.1.1",
-    "cosmiconfig": "^8.2.0",
-    "semantic-release": "^21.0.7",
+    "cosmiconfig": "^8.3.5",
+    "semantic-release": "^21.1.1",
     "simple-git": "^3.19.1"
   },
   "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
   "devDependencies": {
-    "@sebbo2002/semantic-release-docker": "^4.0.0",
+    "@sebbo2002/semantic-release-docker": "^4.0.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "eslint": "^8.45.0",
+    "eslint": "^8.48.0",
     "eslint-plugin-jsonc": "^2.9.0",
     "semantic-release-license": "^1.0.3"
   },
