@@ -7,7 +7,7 @@
     "@actions/core": "^1.10.1",
     "@actions/github": "^6.0.0",
     "cosmiconfig": "^9.0.0",
-    "semantic-release": "^23.0.0",
+    "semantic-release": "^23.0.2",
     "simple-git": "^3.22.0"
   },
   "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
@@ -17,7 +17,7 @@
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "eslint": "^8.56.0",
-    "eslint-plugin-jsonc": "^2.11.2",
+    "eslint-plugin-jsonc": "^2.13.0",
     "semantic-release-license": "^1.0.3"
   },
   "engines": {
