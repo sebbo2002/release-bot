@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/sebbo2002/release-bot/compare/v4.0.21...v4.1.0) (2024-05-28)
+
+
+### Features
+
+* Upgrade to node.js 20 ([62c88bb](https://github.com/sebbo2002/release-bot/commit/62c88bb7f981a8f8596d0ba36dd938de066f5495))
+
 # [4.1.0-develop.1](https://github.com/sebbo2002/release-bot/compare/v4.0.22-develop.2...v4.1.0-develop.1) (2024-05-28)
 
 
