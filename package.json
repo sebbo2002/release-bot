@@ -7,18 +7,20 @@
     "@actions/core": "^1.10.1",
     "@actions/github": "^6.0.0",
     "cosmiconfig": "^9.0.0",
-    "semantic-release": "^23.1.1",
-    "simple-git": "^3.24.0"
+    "semantic-release": "^24.0.0",
+    "simple-git": "^3.25.0"
   },
   "description": "Checks development and release branches and creates a release PR when it is time for a release again.",
   "devDependencies": {
+    "@eslint/js": "^9.7.0",
     "@sebbo2002/semantic-release-docker": "^4.0.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "eslint": "^9.3.0",
-    "eslint-plugin-jsonc": "^2.15.1",
-    "semantic-release-license": "^1.0.3"
+    "eslint-plugin-jsonc": "^2.16.0",
+    "semantic-release-license": "^1.0.3",
+    "typescript-eslint": "^8.0.0-alpha.51"
   },
   "engines": {
     "node": ">=12.0.0"
@@ -35,7 +37,7 @@
     "url": "git+https://github.com/sebbo2002/release-bot.git"
   },
   "scripts": {
-    "lint": "eslint . --ext .js,.json",
+    "lint": "eslint .",
     "test": "echo \"No tests specified.\""
   },
   "version": "1.0.0-dev"
