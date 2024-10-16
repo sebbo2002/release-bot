@@ -1,3 +1,13 @@
+## [4.1.3-develop.5](https://github.com/sebbo2002/release-bot/compare/v4.1.3-develop.4...v4.1.3-develop.5) (2024-10-09)
+
+## [4.1.3-develop.4](https://github.com/sebbo2002/release-bot/compare/v4.1.3-develop.3...v4.1.3-develop.4) (2024-10-09)
+
+## [4.1.3-develop.3](https://github.com/sebbo2002/release-bot/compare/v4.1.3-develop.2...v4.1.3-develop.3) (2024-09-26)
+
+## [4.1.3-develop.2](https://github.com/sebbo2002/release-bot/compare/v4.1.3-develop.1...v4.1.3-develop.2) (2024-09-18)
+
+## [4.1.3-develop.1](https://github.com/sebbo2002/release-bot/compare/v4.1.2...v4.1.3-develop.1) (2024-09-08)
+
 ## [4.1.2](https://github.com/sebbo2002/release-bot/compare/v4.1.1...v4.1.2) (2024-08-26)
 
 ## [4.1.2-develop.1](https://github.com/sebbo2002/release-bot/compare/v4.1.1...v4.1.2-develop.1) (2024-08-24)
