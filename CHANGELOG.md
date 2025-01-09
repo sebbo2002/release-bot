@@ -1,3 +1,5 @@
+## [4.1.5-develop.2](https://github.com/sebbo2002/release-bot/compare/v4.1.5-develop.1...v4.1.5-develop.2) (2025-01-09)
+
 ## [4.1.5-develop.1](https://github.com/sebbo2002/release-bot/compare/v4.1.4...v4.1.5-develop.1) (2024-11-28)
 
 
