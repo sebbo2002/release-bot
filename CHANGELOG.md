@@ -1,3 +1,10 @@
+## [4.1.5](https://github.com/sebbo2002/release-bot/compare/v4.1.4...v4.1.5) (2025-01-09)
+
+
+### Bug Fixes
+
+* **deps:** downgrade eslint to v9.13.0 to resolve typescript-eslint issue ([fb0e73d](https://github.com/sebbo2002/release-bot/commit/fb0e73d39f061178e6219384e1292585c4999cbe)), closes [#10353](https://github.com/sebbo2002/release-bot/issues/10353) [typescript-eslint/typescript-eslint#10353](https://github.com/typescript-eslint/typescript-eslint/issues/10353)
+
 ## [4.1.5-develop.2](https://github.com/sebbo2002/release-bot/compare/v4.1.5-develop.1...v4.1.5-develop.2) (2025-01-09)
 
 ## [4.1.5-develop.1](https://github.com/sebbo2002/release-bot/compare/v4.1.4...v4.1.5-develop.1) (2024-11-28)
