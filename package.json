@@ -17,7 +17,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^7.0.3",
     "@semantic-release/git": "^10.0.1",
-    "eslint": "^9.22.0",
+    "eslint": "^9.24.0",
     "eslint-plugin-jsonc": "^2.20.0",
     "semantic-release-license": "^1.0.3",
     "typescript-eslint": "^8.29.0"
