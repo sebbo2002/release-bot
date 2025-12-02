@@ -20,7 +20,7 @@
     "eslint": "^9.39.1",
     "eslint-plugin-jsonc": "^2.21.0",
     "semantic-release-license": "^1.0.3",
-    "typescript-eslint": "^8.46.2"
+    "typescript-eslint": "^8.48.0"
   },
   "engines": {
     "node": ">=12.0.0"
