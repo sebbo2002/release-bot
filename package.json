@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "@actions/core": "^2.0.3",
-    "@actions/github": "^8.0.1",
+    "@actions/github": "^9.0.0",
     "cosmiconfig": "^9.0.0",
     "semantic-release": "^25.0.3",
     "simple-git": "^3.31.1"
@@ -21,7 +21,7 @@
     "eslint-plugin-jsonc": "^2.21.1",
     "globals": "^17.3.0",
     "semantic-release-license": "^1.0.3",
-    "typescript-eslint": "^8.56.0"
+    "typescript-eslint": "^8.56.1"
   },
   "engines": {
     "node": ">=12.0.0"
@@ -41,5 +41,6 @@
     "lint": "eslint .",
     "test": "echo \"No tests specified.\""
   },
+  "type": "module",
   "version": "1.0.0-dev"
 }

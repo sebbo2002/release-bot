@@ -1,8 +1,9 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const git = require('simple-git')();
-const {cosmiconfig} = require('cosmiconfig');
-const {Buffer} = require('buffer');
+import * as core from '@actions/core';
+import * as github from '@actions/github';
+import { simpleGit } from 'simple-git';
+import { cosmiconfig } from 'cosmiconfig';
+
+const git = simpleGit();
 
 class ReleaseBot {
     constructor() {
@@ -324,4 +325,4 @@ class ReleaseBot {
     }
 }
 
-module.exports = ReleaseBot;
+export default ReleaseBot;
