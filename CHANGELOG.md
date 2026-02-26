@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/sebbo2002/release-bot/compare/v4.1.17...v4.2.0) (2026-02-26)
+
+
+### Features
+
+* Refactor code to use ESM imports ([d47177f](https://github.com/sebbo2002/release-bot/commit/d47177fa4dbd4a7d3a8f795ef6905dd455eed499))
+
 # [4.2.0-develop.2](https://github.com/sebbo2002/release-bot/compare/v4.2.0-develop.1...v4.2.0-develop.2) (2026-02-26)
 
 # [4.2.0-develop.1](https://github.com/sebbo2002/release-bot/compare/v4.1.18-develop.2...v4.2.0-develop.1) (2026-02-26)
