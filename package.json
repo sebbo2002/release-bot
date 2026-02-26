@@ -40,5 +40,6 @@
     "lint": "eslint .",
     "test": "echo \"No tests specified.\""
   },
+  "type": "module",
   "version": "1.0.0-dev"
 }
