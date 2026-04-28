@@ -1,3 +1,5 @@
+## [4.2.2-develop.1](https://github.com/sebbo2002/release-bot/compare/v4.2.1...v4.2.2-develop.1) (2026-04-28)
+
 ## [4.2.1](https://github.com/sebbo2002/release-bot/compare/v4.2.0...v4.2.1) (2026-04-17)
 
 ## [4.2.1-develop.4](https://github.com/sebbo2002/release-bot/compare/v4.2.1-develop.3...v4.2.1-develop.4) (2026-04-15)
