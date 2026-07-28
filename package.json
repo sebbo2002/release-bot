@@ -21,7 +21,7 @@
     "eslint-plugin-jsonc": "^3.3.0",
     "globals": "^17.7.0",
     "semantic-release-license": "^1.0.3",
-    "typescript-eslint": "^8.62.1"
+    "typescript-eslint": "^8.65.0"
   },
   "engines": {
     "node": ">=12.0.0"
