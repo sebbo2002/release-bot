@@ -1,47 +1,50 @@
-# template
+# @sebbo2002/release-bot
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
-Here would be a very short description of the project. So in this example it would be a short information that this is
-a template that I use to start new projects and services.
+This is a small GitHub action that is supposed to help me release stuff. Usually, I forget to do releases, so I built this.
+The bot runs [semantic release](https://semantic-release.gitbook.io/semantic-release/) and creates pull requests
+[like this one](https://github.com/sebbo2002/ical-generator/pull/240) when there is something to release.
 
 
-## 🚨 Template Usage Checklist
-- [ ] Update project name in `package.json`
-- [ ] Create `main` and `develop` branches
-- [ ] Set `develop` as default branch
-- [ ] Create Docker Repository
-    - [ ] Add Repository Description
-    - [ ] Add secret: `DOCKERHUB_TOKEN`
-- [ ] Create npm Repository with `npm publish --access public`
-    - [ ] Add secret: `NPM_TOKEN`
-- [ ] Go through repo settings
+## ⚡️ Example
 
+```yaml
+name: ReleaseBot
+on:
+  workflow_dispatch:
+  push:
+    branches: ['develop']
+  schedule:
+    - cron: '0 6 * * 0'
 
-## 📦 Installation
+jobs:
+  release-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ☁️ Checkout Project
+        uses: actions/checkout@v2
+      - name: ☁️ Checkout ReleaseBot
+        uses: actions/checkout@v2
+        with:
+          repository: sebbo2002/release-bot
+          path: ./.actions/release-bot
+      - name: 🔧 Setup npm cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-releasebot-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-releasebot-
+      - name: 📦 Install Dependencies
+        run: npm ci
+        working-directory: ./.actions/release-bot
+      - name: 🤖 Run ReleaseBot
+        uses: ./.actions/release-bot
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-	git clone https://github.com/sebbo2002/template.git
-    cd ./template
-
-    npm install
-
-
-## ⚡️ Quick Start
-
-This is where it would normally say how to use the project.
-This could be a code example for a library or instructions on how to use a CLI tool.
-
-
-## 📑 API-Reference
-
-Is there an API that needs to be documented? Then here would be a nice place for it. If there is external documentation,
-you can link it here ([example](https://github.com/sebbo2002/ical-generator/#-api-reference)).
-
-
-## 🙋 FAQ
-
-### What's `1` + `2`
-It's `3` 🎉
+```
 
 
 ## 🙆🏼‍♂️ Copyright and license
